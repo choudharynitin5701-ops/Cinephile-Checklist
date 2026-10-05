@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/jojo/Documents/top100.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>Top 100 Cinephile Checklist</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --accent-color: #38bdf8;
+      --border-color: #334155;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: sticky;
+      top: 0;
+      background-color: var(--bg-color);
+      padding: 15px 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 1.8rem;
+      color: var(--accent-color);
+    }
+
+    .progress-box {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .progress-bar-bg {
+      background-color: var(--border-color);
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-bar-fill {
+      background-color: var(--accent-color);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .phase-title {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      margin: 30px 0 15px 0;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .item-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 12px 16px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .item-label {
+      font-size: 1rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .type-tag {
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background-color: var(--border-color);
+      color: var(--text-sub);
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent-color);
+      cursor: pointer;
+    }
+
+    .seasons-container {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-left: 20px;
+    }
+
+    .season-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--text-sub);
+    }
+
+    .reset-btn {
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>The Top 100 Cinephile Checklist</h1>
+    <div class="progress-box">
+      <div id="progress-text">Progress: 11 / 100 Watched (11%)</div>
+      <div class="progress-bar-bg">
+        <div id="progress-fill" class="progress-bar-fill" style="width: 11%;"></div>
+      </div>
+    </div>
+  </header>
+
+  <div id="checklist-root"><div class="phase-title">PHASE 1: THE UNDISPUTED TITANS (1–20)</div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>1. The Godfather / Godfather Part II</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_1" onchange="saveState(&#39;main_1&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>2. Breaking Bad</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_2" onchange="saveState(&#39;main_2&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_2_s_0" onchange="saveState(&#39;item_2_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_2_s_1" onchange="saveState(&#39;item_2_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_2_s_2" onchange="saveState(&#39;item_2_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_2_s_3" onchange="saveState(&#39;item_2_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_2_s_4" onchange="saveState(&#39;item_2_s_4&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>3. The Shawshank Redemption</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_3" onchange="saveState(&#39;main_3&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>4. The Sopranos</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_4" onchange="saveState(&#39;main_4&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_4_s_0" onchange="saveState(&#39;item_4_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_4_s_1" onchange="saveState(&#39;item_4_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_4_s_2" onchange="saveState(&#39;item_4_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_4_s_3" onchange="saveState(&#39;item_4_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_4_s_4" onchange="saveState(&#39;item_4_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_4_s_5" onchange="saveState(&#39;item_4_s_5&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>5. Pulp Fiction</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_5" onchange="saveState(&#39;main_5&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>6. The Wire</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_6" onchange="saveState(&#39;main_6&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_6_s_0" onchange="saveState(&#39;item_6_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_6_s_1" onchange="saveState(&#39;item_6_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_6_s_2" onchange="saveState(&#39;item_6_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_6_s_3" onchange="saveState(&#39;item_6_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_6_s_4" onchange="saveState(&#39;item_6_s_4&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>7. Inception</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_7" onchange="saveState(&#39;main_7&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>8. The Dark Knight</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_8" onchange="saveState(&#39;main_8&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>9. Game of Thrones</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_9" onchange="saveState(&#39;main_9&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_9_s_0" onchange="saveState(&#39;item_9_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_9_s_1" onchange="saveState(&#39;item_9_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_9_s_2" onchange="saveState(&#39;item_9_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_9_s_3" onchange="saveState(&#39;item_9_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_9_s_4" onchange="saveState(&#39;item_9_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_9_s_5" onchange="saveState(&#39;item_9_s_5&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 7</span>
+              <input type="checkbox" id="item_9_s_6" onchange="saveState(&#39;item_9_s_6&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 8</span>
+              <input type="checkbox" id="item_9_s_7" onchange="saveState(&#39;item_9_s_7&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>10. Schindler's List</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_10" onchange="saveState(&#39;main_10&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>11. Chernobyl</span>
+            <span class="type-tag">Miniseries</span>
+          </div>
+          <input type="checkbox" id="main_11" onchange="saveState(&#39;main_11&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Limited Series (5 Episodes)</span>
+              <input type="checkbox" id="item_11_s_0" onchange="saveState(&#39;item_11_s_0&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>12. Fight Club</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_12" onchange="saveState(&#39;main_12&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>13. Interstellar</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_13" onchange="saveState(&#39;main_13&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>14. Better Call Saul</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_14" onchange="saveState(&#39;main_14&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_14_s_0" onchange="saveState(&#39;item_14_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_14_s_1" onchange="saveState(&#39;item_14_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_14_s_2" onchange="saveState(&#39;item_14_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_14_s_3" onchange="saveState(&#39;item_14_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_14_s_4" onchange="saveState(&#39;item_14_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_14_s_5" onchange="saveState(&#39;item_14_s_5&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>15. 12 Angry Men</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_15" onchange="saveState(&#39;main_15&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>16. True Detective</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_16" onchange="saveState(&#39;main_16&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_16_s_0" onchange="saveState(&#39;item_16_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_16_s_1" onchange="saveState(&#39;item_16_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_16_s_2" onchange="saveState(&#39;item_16_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_16_s_3" onchange="saveState(&#39;item_16_s_3&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>17. Se7en</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_17" onchange="saveState(&#39;main_17&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>18. Band of Brothers</span>
+            <span class="type-tag">Miniseries</span>
+          </div>
+          <input type="checkbox" id="main_18" onchange="saveState(&#39;main_18&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Limited Series (10 Episodes)</span>
+              <input type="checkbox" id="item_18_s_0" onchange="saveState(&#39;item_18_s_0&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>19. Goodfellas</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_19" onchange="saveState(&#39;main_19&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>20. The Lord of the Rings Trilogy</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_20" onchange="saveState(&#39;main_20&#39;, this.checked)">
+        </div>
+        
+      </div><div class="phase-title">PHASE 2: MODERN MASTERPIECES &amp; MIND-BENDERS (21–40)</div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>21. Parasite</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_21" onchange="saveState(&#39;main_21&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>22. Sherlock</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_22" onchange="saveState(&#39;main_22&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_22_s_0" onchange="saveState(&#39;item_22_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_22_s_1" onchange="saveState(&#39;item_22_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_22_s_2" onchange="saveState(&#39;item_22_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_22_s_3" onchange="saveState(&#39;item_22_s_3&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>23. The Prestige</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_23" onchange="saveState(&#39;main_23&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>24. Succession</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_24" onchange="saveState(&#39;main_24&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_24_s_0" onchange="saveState(&#39;item_24_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_24_s_1" onchange="saveState(&#39;item_24_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_24_s_2" onchange="saveState(&#39;item_24_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_24_s_3" onchange="saveState(&#39;item_24_s_3&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>25. Shutter Island</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_25" onchange="saveState(&#39;main_25&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>26. Mindhunter</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_26" onchange="saveState(&#39;main_26&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_26_s_0" onchange="saveState(&#39;item_26_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_26_s_1" onchange="saveState(&#39;item_26_s_1&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>27. The Matrix</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_27" onchange="saveState(&#39;main_27&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>28. Fargo</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_28" onchange="saveState(&#39;main_28&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_28_s_0" onchange="saveState(&#39;item_28_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_28_s_1" onchange="saveState(&#39;item_28_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_28_s_2" onchange="saveState(&#39;item_28_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_28_s_3" onchange="saveState(&#39;item_28_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_28_s_4" onchange="saveState(&#39;item_28_s_4&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>29. Whiplash</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_29" onchange="saveState(&#39;main_29&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>30. Dark</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_30" onchange="saveState(&#39;main_30&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_30_s_0" onchange="saveState(&#39;item_30_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_30_s_1" onchange="saveState(&#39;item_30_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_30_s_2" onchange="saveState(&#39;item_30_s_2&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>31. No Country for Old Men</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_31" onchange="saveState(&#39;main_31&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>32. Peaky Blinders</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_32" onchange="saveState(&#39;main_32&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_32_s_0" onchange="saveState(&#39;item_32_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_32_s_1" onchange="saveState(&#39;item_32_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_32_s_2" onchange="saveState(&#39;item_32_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_32_s_3" onchange="saveState(&#39;item_32_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_32_s_4" onchange="saveState(&#39;item_32_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_32_s_5" onchange="saveState(&#39;item_32_s_5&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>33. There Will Be Blood</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_33" onchange="saveState(&#39;main_33&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>34. Fleabag</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_34" onchange="saveState(&#39;main_34&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_34_s_0" onchange="saveState(&#39;item_34_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_34_s_1" onchange="saveState(&#39;item_34_s_1&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>35. The Silence of the Lambs</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_35" onchange="saveState(&#39;main_35&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>36. Severance</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_36" onchange="saveState(&#39;main_36&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_36_s_0" onchange="saveState(&#39;item_36_s_0&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>37. Gladiator</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_37" onchange="saveState(&#39;main_37&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>38. Stranger Things</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_38" onchange="saveState(&#39;main_38&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_38_s_0" onchange="saveState(&#39;item_38_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_38_s_1" onchange="saveState(&#39;item_38_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_38_s_2" onchange="saveState(&#39;item_38_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_38_s_3" onchange="saveState(&#39;item_38_s_3&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>39. Memento</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_39" onchange="saveState(&#39;main_39&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>40. The Last of Us</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_40" onchange="saveState(&#39;main_40&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_40_s_0" onchange="saveState(&#39;item_40_s_0&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="phase-title">PHASE 3: PSYCHOLOGICAL, CRIME &amp; GENRE BENCHMARKS (41–60)</div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>41. Prisoners</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_41" onchange="saveState(&#39;main_41&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>42. Narcos</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_42" onchange="saveState(&#39;main_42&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_42_s_0" onchange="saveState(&#39;item_42_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_42_s_1" onchange="saveState(&#39;item_42_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_42_s_2" onchange="saveState(&#39;item_42_s_2&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>43. Oldboy (2003)</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_43" onchange="saveState(&#39;main_43&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>44. Avatar: The Last Airbender</span>
+            <span class="type-tag">Animated TV</span>
+          </div>
+          <input type="checkbox" id="main_44" onchange="saveState(&#39;main_44&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Book 1: Water</span>
+              <input type="checkbox" id="item_44_s_0" onchange="saveState(&#39;item_44_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Book 2: Earth</span>
+              <input type="checkbox" id="item_44_s_1" onchange="saveState(&#39;item_44_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Book 3: Fire</span>
+              <input type="checkbox" id="item_44_s_2" onchange="saveState(&#39;item_44_s_2&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>45. Spirited Away</span>
+            <span class="type-tag">Animated Film</span>
+          </div>
+          <input type="checkbox" id="main_45" onchange="saveState(&#39;main_45&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>46. The Office (US)</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_46" onchange="saveState(&#39;main_46&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_46_s_0" onchange="saveState(&#39;item_46_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_46_s_1" onchange="saveState(&#39;item_46_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_46_s_2" onchange="saveState(&#39;item_46_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_46_s_3" onchange="saveState(&#39;item_46_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_46_s_4" onchange="saveState(&#39;item_46_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_46_s_5" onchange="saveState(&#39;item_46_s_5&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 7</span>
+              <input type="checkbox" id="item_46_s_6" onchange="saveState(&#39;item_46_s_6&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 8</span>
+              <input type="checkbox" id="item_46_s_7" onchange="saveState(&#39;item_46_s_7&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 9</span>
+              <input type="checkbox" id="item_46_s_8" onchange="saveState(&#39;item_46_s_8&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>47. Inglourious Basterds</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_47" onchange="saveState(&#39;main_47&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>48. Arcane</span>
+            <span class="type-tag">Animated TV</span>
+          </div>
+          <input type="checkbox" id="main_48" onchange="saveState(&#39;main_48&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_48_s_0" onchange="saveState(&#39;item_48_s_0&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>49. Taxi Driver</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_49" onchange="saveState(&#39;main_49&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>50. Black Mirror</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_50" onchange="saveState(&#39;main_50&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_50_s_0" onchange="saveState(&#39;item_50_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_50_s_1" onchange="saveState(&#39;item_50_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_50_s_2" onchange="saveState(&#39;item_50_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_50_s_3" onchange="saveState(&#39;item_50_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_50_s_4" onchange="saveState(&#39;item_50_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_50_s_5" onchange="saveState(&#39;item_50_s_5&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>51. Psycho</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_51" onchange="saveState(&#39;main_51&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>52. Twin Peaks</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_52" onchange="saveState(&#39;main_52&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_52_s_0" onchange="saveState(&#39;item_52_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_52_s_1" onchange="saveState(&#39;item_52_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3 (The Return)</span>
+              <input type="checkbox" id="item_52_s_2" onchange="saveState(&#39;item_52_s_2&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>53. Apocalypse Now</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_53" onchange="saveState(&#39;main_53&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>54. The Twilight Zone (Original)</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_54" onchange="saveState(&#39;main_54&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_54_s_0" onchange="saveState(&#39;item_54_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_54_s_1" onchange="saveState(&#39;item_54_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_54_s_2" onchange="saveState(&#39;item_54_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_54_s_3" onchange="saveState(&#39;item_54_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_54_s_4" onchange="saveState(&#39;item_54_s_4&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>55. Incendies</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_55" onchange="saveState(&#39;main_55&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>56. The Shield</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_56" onchange="saveState(&#39;main_56&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_56_s_0" onchange="saveState(&#39;item_56_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_56_s_1" onchange="saveState(&#39;item_56_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_56_s_2" onchange="saveState(&#39;item_56_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_56_s_3" onchange="saveState(&#39;item_56_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_56_s_4" onchange="saveState(&#39;item_56_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_56_s_5" onchange="saveState(&#39;item_56_s_5&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 7</span>
+              <input type="checkbox" id="item_56_s_6" onchange="saveState(&#39;item_56_s_6&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>57. City of God</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_57" onchange="saveState(&#39;main_57&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>58. Mad Men</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_58" onchange="saveState(&#39;main_58&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_58_s_0" onchange="saveState(&#39;item_58_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_58_s_1" onchange="saveState(&#39;item_58_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_58_s_2" onchange="saveState(&#39;item_58_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_58_s_3" onchange="saveState(&#39;item_58_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_58_s_4" onchange="saveState(&#39;item_58_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_58_s_5" onchange="saveState(&#39;item_58_s_5&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 7</span>
+              <input type="checkbox" id="item_58_s_6" onchange="saveState(&#39;item_58_s_6&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>59. Blade Runner 2049</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_59" onchange="saveState(&#39;main_59&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>60. Death Note</span>
+            <span class="type-tag">Anime TV</span>
+          </div>
+          <input type="checkbox" id="main_60" onchange="saveState(&#39;main_60&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1 (37 Episodes)</span>
+              <input type="checkbox" id="item_60_s_0" onchange="saveState(&#39;item_60_s_0&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="phase-title">PHASE 4: WORLD CINEMA &amp; CULT CLASSICS (61–80)</div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>61. Tumbbad</span>
+            <span class="type-tag">Indian Film</span>
+          </div>
+          <input type="checkbox" id="main_61" onchange="saveState(&#39;main_61&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>62. Attack on Titan</span>
+            <span class="type-tag">Anime TV</span>
+          </div>
+          <input type="checkbox" id="main_62" onchange="saveState(&#39;main_62&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_62_s_0" onchange="saveState(&#39;item_62_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_62_s_1" onchange="saveState(&#39;item_62_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_62_s_2" onchange="saveState(&#39;item_62_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_62_s_3" onchange="saveState(&#39;item_62_s_3&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>63. Gangs of Wasseypur (Parts 1 &amp; 2)</span>
+            <span class="type-tag">Indian Film</span>
+          </div>
+          <input type="checkbox" id="main_63" onchange="saveState(&#39;main_63&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>64. BoJack Horseman</span>
+            <span class="type-tag">Animated TV</span>
+          </div>
+          <input type="checkbox" id="main_64" onchange="saveState(&#39;main_64&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_64_s_0" onchange="saveState(&#39;item_64_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_64_s_1" onchange="saveState(&#39;item_64_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_64_s_2" onchange="saveState(&#39;item_64_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_64_s_3" onchange="saveState(&#39;item_64_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_64_s_4" onchange="saveState(&#39;item_64_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_64_s_5" onchange="saveState(&#39;item_64_s_5&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>65. The Social Network</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_65" onchange="saveState(&#39;main_65&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>66. House of Cards</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_66" onchange="saveState(&#39;main_66&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_66_s_0" onchange="saveState(&#39;item_66_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_66_s_1" onchange="saveState(&#39;item_66_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_66_s_2" onchange="saveState(&#39;item_66_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_66_s_3" onchange="saveState(&#39;item_66_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_66_s_4" onchange="saveState(&#39;item_66_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_66_s_5" onchange="saveState(&#39;item_66_s_5&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>67. A Clockwork Orange</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_67" onchange="saveState(&#39;main_67&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>68. Dexter</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_68" onchange="saveState(&#39;main_68&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_68_s_0" onchange="saveState(&#39;item_68_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_68_s_1" onchange="saveState(&#39;item_68_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_68_s_2" onchange="saveState(&#39;item_68_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_68_s_3" onchange="saveState(&#39;item_68_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_68_s_4" onchange="saveState(&#39;item_68_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_68_s_5" onchange="saveState(&#39;item_68_s_5&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 7</span>
+              <input type="checkbox" id="item_68_s_6" onchange="saveState(&#39;item_68_s_6&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 8</span>
+              <input type="checkbox" id="item_68_s_7" onchange="saveState(&#39;item_68_s_7&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>69. Sicario</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_69" onchange="saveState(&#39;main_69&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>70. Hannibal</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_70" onchange="saveState(&#39;main_70&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_70_s_0" onchange="saveState(&#39;item_70_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_70_s_1" onchange="saveState(&#39;item_70_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_70_s_2" onchange="saveState(&#39;item_70_s_2&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>71. Rear Window</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_71" onchange="saveState(&#39;main_71&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>72. Squid Game</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_72" onchange="saveState(&#39;main_72&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_72_s_0" onchange="saveState(&#39;item_72_s_0&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>73. Once Upon a Time in the West</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_73" onchange="saveState(&#39;main_73&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>74. The Boys</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_74" onchange="saveState(&#39;main_74&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_74_s_0" onchange="saveState(&#39;item_74_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_74_s_1" onchange="saveState(&#39;item_74_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_74_s_2" onchange="saveState(&#39;item_74_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_74_s_3" onchange="saveState(&#39;item_74_s_3&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>75. The Truman Show</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_75" onchange="saveState(&#39;main_75&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>76. Watchmen (2019)</span>
+            <span class="type-tag">Miniseries</span>
+          </div>
+          <input type="checkbox" id="main_76" onchange="saveState(&#39;main_76&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Limited Series (9 Episodes)</span>
+              <input type="checkbox" id="item_76_s_0" onchange="saveState(&#39;item_76_s_0&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>77. Ran (1985)</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_77" onchange="saveState(&#39;main_77&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>78. The Bear</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_78" onchange="saveState(&#39;main_78&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_78_s_0" onchange="saveState(&#39;item_78_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_78_s_1" onchange="saveState(&#39;item_78_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_78_s_2" onchange="saveState(&#39;item_78_s_2&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>79. Léon: The Professional</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_79" onchange="saveState(&#39;main_79&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>80. Mr. Robot</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_80" onchange="saveState(&#39;main_80&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_80_s_0" onchange="saveState(&#39;item_80_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_80_s_1" onchange="saveState(&#39;item_80_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_80_s_2" onchange="saveState(&#39;item_80_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_80_s_3" onchange="saveState(&#39;item_80_s_3&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="phase-title">PHASE 5: CINEMATIC ART &amp; STORYTELLING PILLARS (81–100)</div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>81. 2001: A Space Odyssey</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_81" onchange="saveState(&#39;main_81&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>82. Six Feet Under</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_82" onchange="saveState(&#39;main_82&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_82_s_0" onchange="saveState(&#39;item_82_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_82_s_1" onchange="saveState(&#39;item_82_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_82_s_2" onchange="saveState(&#39;item_82_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_82_s_3" onchange="saveState(&#39;item_82_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_82_s_4" onchange="saveState(&#39;item_82_s_4&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>83. Andhadhun</span>
+            <span class="type-tag">Indian Film</span>
+          </div>
+          <input type="checkbox" id="main_83" onchange="saveState(&#39;main_83&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>84. Lost</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_84" onchange="saveState(&#39;main_84&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_84_s_0" onchange="saveState(&#39;item_84_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_84_s_1" onchange="saveState(&#39;item_84_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_84_s_2" onchange="saveState(&#39;item_84_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_84_s_3" onchange="saveState(&#39;item_84_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_84_s_4" onchange="saveState(&#39;item_84_s_4&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 6</span>
+              <input type="checkbox" id="item_84_s_5" onchange="saveState(&#39;item_84_s_5&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>85. The Departed</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_85" onchange="saveState(&#39;main_85&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>86. Boardwalk Empire</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_86" onchange="saveState(&#39;main_86&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_86_s_0" onchange="saveState(&#39;item_86_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_86_s_1" onchange="saveState(&#39;item_86_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_86_s_2" onchange="saveState(&#39;item_86_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_86_s_3" onchange="saveState(&#39;item_86_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_86_s_4" onchange="saveState(&#39;item_86_s_4&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>87. Memories of Murder</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_87" onchange="saveState(&#39;main_87&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>88. The Dark Knight Rises</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_88" onchange="saveState(&#39;main_88&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>89. Requiem for a Dream</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_89" onchange="saveState(&#39;main_89&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>90. Person of Interest</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_90" onchange="saveState(&#39;main_90&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_90_s_0" onchange="saveState(&#39;item_90_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_90_s_1" onchange="saveState(&#39;item_90_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_90_s_2" onchange="saveState(&#39;item_90_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_90_s_3" onchange="saveState(&#39;item_90_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 5</span>
+              <input type="checkbox" id="item_90_s_4" onchange="saveState(&#39;item_90_s_4&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>91. American History X</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_91" onchange="saveState(&#39;main_91&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>92. Westworld</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_92" onchange="saveState(&#39;main_92&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_92_s_0" onchange="saveState(&#39;item_92_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_92_s_1" onchange="saveState(&#39;item_92_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_92_s_2" onchange="saveState(&#39;item_92_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 4</span>
+              <input type="checkbox" id="item_92_s_3" onchange="saveState(&#39;item_92_s_3&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>93. Casablanca</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_93" onchange="saveState(&#39;main_93&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>94. Money Heist</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_94" onchange="saveState(&#39;main_94&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Part 1</span>
+              <input type="checkbox" id="item_94_s_0" onchange="saveState(&#39;item_94_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Part 2</span>
+              <input type="checkbox" id="item_94_s_1" onchange="saveState(&#39;item_94_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Part 3</span>
+              <input type="checkbox" id="item_94_s_2" onchange="saveState(&#39;item_94_s_2&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Part 4</span>
+              <input type="checkbox" id="item_94_s_3" onchange="saveState(&#39;item_94_s_3&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Part 5</span>
+              <input type="checkbox" id="item_94_s_4" onchange="saveState(&#39;item_94_s_4&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>95. Eternal Sunshine of the Spotless Mind</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_95" onchange="saveState(&#39;main_95&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>96. Deadwood</span>
+            <span class="type-tag">TV Show</span>
+          </div>
+          <input type="checkbox" id="main_96" onchange="saveState(&#39;main_96&#39;, this.checked)">
+        </div>
+        <div class="seasons-container">
+            <div class="season-item">
+              <span>Season 1</span>
+              <input type="checkbox" id="item_96_s_0" onchange="saveState(&#39;item_96_s_0&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 2</span>
+              <input type="checkbox" id="item_96_s_1" onchange="saveState(&#39;item_96_s_1&#39;, this.checked)">
+            </div>
+          
+            <div class="season-item">
+              <span>Season 3</span>
+              <input type="checkbox" id="item_96_s_2" onchange="saveState(&#39;item_96_s_2&#39;, this.checked)">
+            </div>
+          </div>
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>97. Good Will Hunting</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_97" onchange="saveState(&#39;main_97&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>98. Super Deluxe</span>
+            <span class="type-tag">Indian Film</span>
+          </div>
+          <input type="checkbox" id="main_98" onchange="saveState(&#39;main_98&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>99. The Usual Suspects</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_99" onchange="saveState(&#39;main_99&#39;, this.checked)">
+        </div>
+        
+      </div><div class="item-card">
+        <div class="item-header">
+          <div class="item-label">
+            <span>100. The Sixth Sense</span>
+            <span class="type-tag">Film</span>
+          </div>
+          <input type="checkbox" id="main_100" onchange="saveState(&#39;main_100&#39;, this.checked)">
+        </div>
+        
+      </div></div>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <button class="reset-btn" onclick="clearProgress()">Reset All Progress</button>
+  </div>
+</div>
+
+<script>
+const data = [
+  {
+    phase: "PHASE 1: THE UNDISPUTED TITANS (1–20)",
+    items: [
+      { id: 1, title: "1. The Godfather / Godfather Part II", type: "Film" },
+      { id: 2, title: "2. Breaking Bad", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"] },
+      { id: 3, title: "3. The Shawshank Redemption", type: "Film" },
+      { id: 4, title: "4. The Sopranos", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"] },
+      { id: 5, title: "5. Pulp Fiction", type: "Film" },
+      { id: 6, title: "6. The Wire", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"] },
+      { id: 7, title: "7. Inception", type: "Film" },
+      { id: 8, title: "8. The Dark Knight", type: "Film" },
+      { id: 9, title: "9. Game of Thrones", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7", "Season 8"] },
+      { id: 10, title: "10. Schindler's List", type: "Film" },
+      { id: 11, title: "11. Chernobyl", type: "Miniseries", seasons: ["Limited Series (5 Episodes)"] },
+      { id: 12, title: "12. Fight Club", type: "Film" },
+      { id: 13, title: "13. Interstellar", type: "Film" },
+      { id: 14, title: "14. Better Call Saul", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"] },
+      { id: 15, title: "15. 12 Angry Men", type: "Film" },
+      { id: 16, title: "16. True Detective", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4"] },
+      { id: 17, title: "17. Se7en", type: "Film" },
+      { id: 18, title: "18. Band of Brothers", type: "Miniseries", seasons: ["Limited Series (10 Episodes)"] },
+      { id: 19, title: "19. Goodfellas", type: "Film" },
+      { id: 20, title: "20. The Lord of the Rings Trilogy", type: "Film" }
+    ]
+  },
+  {
+    phase: "PHASE 2: MODERN MASTERPIECES & MIND-BENDERS (21–40)",
+    items: [
+      { id: 21, title: "21. Parasite", type: "Film" },
+      { id: 22, title: "22. Sherlock", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4"] },
+      { id: 23, title: "23. The Prestige", type: "Film" },
+      { id: 24, title: "24. Succession", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4"] },
+      { id: 25, title: "25. Shutter Island", type: "Film" },
+      { id: 26, title: "26. Mindhunter", type: "TV Show", seasons: ["Season 1", "Season 2"] },
+      { id: 27, title: "27. The Matrix", type: "Film" },
+      { id: 28, title: "28. Fargo", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"] },
+      { id: 29, title: "29. Whiplash", type: "Film" },
+      { id: 30, title: "30. Dark", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3"] },
+      { id: 31, title: "31. No Country for Old Men", type: "Film" },
+      { id: 32, title: "32. Peaky Blinders", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"] },
+      { id: 33, title: "33. There Will Be Blood", type: "Film" },
+      { id: 34, title: "34. Fleabag", type: "TV Show", seasons: ["Season 1", "Season 2"] },
+      { id: 35, title: "35. The Silence of the Lambs", type: "Film" },
+      { id: 36, title: "36. Severance", type: "TV Show", seasons: ["Season 1"] },
+      { id: 37, title: "37. Gladiator", type: "Film" },
+      { id: 38, title: "38. Stranger Things", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4"] },
+      { id: 39, title: "39. Memento", type: "Film" },
+      { id: 40, title: "40. The Last of Us", type: "TV Show", seasons: ["Season 1"] }
+    ]
+  },
+  {
+    phase: "PHASE 3: PSYCHOLOGICAL, CRIME & GENRE BENCHMARKS (41–60)",
+    items: [
+      { id: 41, title: "41. Prisoners", type: "Film" },
+      { id: 42, title: "42. Narcos", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3"] },
+      { id: 43, title: "43. Oldboy (2003)", type: "Film" },
+      { id: 44, title: "44. Avatar: The Last Airbender", type: "Animated TV", seasons: ["Book 1: Water", "Book 2: Earth", "Book 3: Fire"] },
+      { id: 45, title: "45. Spirited Away", type: "Animated Film" },
+      { id: 46, title: "46. The Office (US)", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7", "Season 8", "Season 9"] },
+      { id: 47, title: "47. Inglourious Basterds", type: "Film" },
+      { id: 48, title: "48. Arcane", type: "Animated TV", seasons: ["Season 1"] },
+      { id: 49, title: "49. Taxi Driver", type: "Film" },
+      { id: 50, title: "50. Black Mirror", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"] },
+      { id: 51, title: "51. Psycho", type: "Film" },
+      { id: 52, title: "52. Twin Peaks", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3 (The Return)"] },
+      { id: 53, title: "53. Apocalypse Now", type: "Film" },
+      { id: 54, title: "54. The Twilight Zone (Original)", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"] },
+      { id: 55, title: "55. Incendies", type: "Film" },
+      { id: 56, title: "56. The Shield", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7"] },
+      { id: 57, title: "57. City of God", type: "Film" },
+      { id: 58, title: "58. Mad Men", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7"] },
+      { id: 59, title: "59. Blade Runner 2049", type: "Film" },
+      { id: 60, title: "60. Death Note", type: "Anime TV", seasons: ["Season 1 (37 Episodes)"] }
+    ]
+  },
+  {
+    phase: "PHASE 4: WORLD CINEMA & CULT CLASSICS (61–80)",
+    items: [
+      { id: 61, title: "61. Tumbbad", type: "Indian Film" },
+      { id: 62, title: "62. Attack on Titan", type: "Anime TV", seasons: ["Season 1", "Season 2", "Season 3", "Season 4"] },
+      { id: 63, title: "63. Gangs of Wasseypur (Parts 1 & 2)", type: "Indian Film" },
+      { id: 64, title: "64. BoJack Horseman", type: "Animated TV", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"] },
+      { id: 65, title: "65. The Social Network", type: "Film" },
+      { id: 66, title: "66. House of Cards", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"] },
+      { id: 67, title: "67. A Clockwork Orange", type: "Film" },
+      { id: 68, title: "68. Dexter", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7", "Season 8"] },
+      { id: 69, title: "69. Sicario", type: "Film" },
+      { id: 70, title: "70. Hannibal", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3"] },
+      { id: 71, title: "71. Rear Window", type: "Film" },
+      { id: 72, title: "72. Squid Game", type: "TV Show", seasons: ["Season 1"] },
+      { id: 73, title: "73. Once Upon a Time in the West", type: "Film" },
+      { id: 74, title: "74. The Boys", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4"] },
+      { id: 75, title: "75. The Truman Show", type: "Film" },
+      { id: 76, title: "76. Watchmen (2019)", type: "Miniseries", seasons: ["Limited Series (9 Episodes)"] },
+      { id: 77, title: "77. Ran (1985)", type: "Film" },
+      { id: 78, title: "78. The Bear", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3"] },
+      { id: 79, title: "79. Léon: The Professional", type: "Film" },
+      { id: 80, title: "80. Mr. Robot", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4"] }
+    ]
+  },
+  {
+    phase: "PHASE 5: CINEMATIC ART & STORYTELLING PILLARS (81–100)",
+    items: [
+      { id: 81, title: "81. 2001: A Space Odyssey", type: "Film" },
+      { id: 82, title: "82. Six Feet Under", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"] },
+      { id: 83, title: "83. Andhadhun", type: "Indian Film" },
+      { id: 84, title: "84. Lost", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"] },
+      { id: 85, title: "85. The Departed", type: "Film" },
+      { id: 86, title: "86. Boardwalk Empire", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"] },
+      { id: 87, title: "87. Memories of Murder", type: "Film" },
+      { id: 88, title: "88. The Dark Knight Rises", type: "Film" },
+      { id: 89, title: "89. Requiem for a Dream", type: "Film" },
+      { id: 90, title: "90. Person of Interest", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"] },
+      { id: 91, title: "91. American History X", type: "Film" },
+      { id: 92, title: "92. Westworld", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3", "Season 4"] },
+      { id: 93, title: "93. Casablanca", type: "Film" },
+      { id: 94, title: "94. Money Heist", type: "TV Show", seasons: ["Part 1", "Part 2", "Part 3", "Part 4", "Part 5"] },
+      { id: 95, title: "95. Eternal Sunshine of the Spotless Mind", type: "Film" },
+      { id: 96, title: "96. Deadwood", type: "TV Show", seasons: ["Season 1", "Season 2", "Season 3"] },
+      { id: 97, title: "97. Good Will Hunting", type: "Film" },
+      { id: 98, title: "98. Super Deluxe", type: "Indian Film" },
+      { id: 99, title: "99. The Usual Suspects", type: "Film" },
+      { id: 100, title: "100. The Sixth Sense", type: "Film" }
+    ]
+  }
+];
+
+function loadSavedData() {
+  return JSON.parse(localStorage.getItem("cinephile_checklist")) || {};
+}
+
+function saveState(id, checked) {
+  const saved = loadSavedData();
+  saved[id] = checked;
+  localStorage.setItem("cinephile_checklist", JSON.stringify(saved));
+  updateProgress();
+}
+
+function updateProgress() {
+  const saved = loadSavedData();
+  let totalWatched = 0;
+  for (let i = 1; i <= 100; i++) {
+    if (saved[`main_${i}`]) totalWatched++;
+  }
+  const percentage = Math.round((totalWatched / 100) * 100);
+  document.getElementById("progress-text").innerText = `Progress: ${totalWatched} / 100 Watched (${percentage}%)`;
+  document.getElementById("progress-fill").style.width = `${percentage}%`;
+}
+
+function renderChecklist() {
+  const root = document.getElementById("checklist-root");
+  const saved = loadSavedData();
+
+  data.forEach(phase => {
+    const phaseEl = document.createElement("div");
+    phaseEl.className = "phase-title";
+    phaseEl.innerText = phase.phase;
+    root.appendChild(phaseEl);
+
+    phase.items.forEach(item => {
+      const itemEl = document.createElement("div");
+      itemEl.className = "item-card";
+
+      let seasonsHTML = "";
+      if (item.seasons) {
+        seasonsHTML = `<div class="seasons-container">`;
+        item.seasons.forEach((season, idx) => {
+          const sKey = `item_${item.id}_s_${idx}`;
+          const isChecked = saved[sKey] ? "checked" : "";
+          seasonsHTML += `
+            <div class="season-item">
+              <span>${season}</span>
+              <input type="checkbox" id="${sKey}" ${isChecked} onchange="saveState('${sKey}', this.checked)">
+            </div>
+          `;
+        });
+        seasonsHTML += `</div>`;
+      }
+
+      const mainKey = `main_${item.id}`;
+      const isMainChecked = saved[mainKey] ? "checked" : "";
+
+      itemEl.innerHTML = `
+        <div class="item-header">
+          <div class="item-label">
+            <span>${item.title}</span>
+            <span class="type-tag">${item.type}</span>
+          </div>
+          <input type="checkbox" id="${mainKey}" ${isMainChecked} onchange="saveState('${mainKey}', this.checked)">
+        </div>
+        ${seasonsHTML}
+      `;
+
+      root.appendChild(itemEl);
+    });
+  });
+
+  updateProgress();
+}
+
+function clearProgress() {
+  if (confirm("Are you sure you want to reset all checked items?")) {
+    localStorage.removeItem("cinephile_checklist");
+    location.reload();
+  }
+}
+
+function restoreSavedState() {
+  const saved = loadSavedData();
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    if (Object.prototype.hasOwnProperty.call(saved, cb.id)) {
+      cb.checked = !!saved[cb.id];
+    }
+  });
+  updateProgress();
+}
+
+document.addEventListener("DOMContentLoaded", restoreSavedState);
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+</script>
+
+
+</body></html>
